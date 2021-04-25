@@ -19,7 +19,6 @@ sh 'java -jar /home/ubuntu/.jenkins/workspace/ScriptedPipeline/testing.jar'
 }
 stage ('Continuous Delivery')
 {
-input message: 'Waiting for Approval from the Delivery Manager "KP".', submitter: 'kp'
 sh 'scp /home/ubuntu/.jenkins/workspace/ScriptedPipeline/webapp/target/webapp.war ubuntu@172.31.36.67:/var/lib/tomcat8/webapps/prodapp.war'
 }
 } 
